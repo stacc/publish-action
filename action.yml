@@ -1,0 +1,15 @@
+name: Stacc Publish
+description: Publish an app to the Stacc Registry
+inputs:
+  publish:
+    description: publishing version
+    required: true
+    default: ""
+outputs:
+  publish:
+    description: Publishing the app
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.publish}}

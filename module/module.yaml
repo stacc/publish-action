@@ -1,0 +1,9 @@
+name: Test-gitWorkflow
+org: stacc
+version: 0.1.0
+type: module
+title: Test-gitWorkflow
+description: Testing
+frontends: []
+backends: []
+parameters: []
