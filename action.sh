@@ -3,13 +3,8 @@ set -e
 
 echo Using CLI version: $(stacc --version)
 
-# Parameters
-CLIENT_ID=${clientId:?'clientId variable missing.'}
-CLIENT_SECRET=${clientSecret:?'clientSecret variable missing.'}
-VERSION=${version:?'version variable missing.'}
-
 # Log in
-stacc login -u $CLIENT_ID -p $CLIENT_SECRET
+stacc login -u $2 -p $3
 
 # Publish artifacts
-stacc publish --version $VERSION $moduleDir
+stacc publish --version $1 $4
