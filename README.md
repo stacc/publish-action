@@ -10,13 +10,13 @@ In order to publish your module or project to the Stacc registry, add the follow
 
 ```yaml
 - step:
-    name: Publish to Stacc Registry
-    script:
-      - pipe: staccas/publish:v0.2.1
-        variables:
-          VERSION: 0.1.0 # version of your module
-          CLIENT_ID: abcdef # Stacc account client ID
-          CLIENT_SECRET: SECRET # Stacc account client secret
+    - name: Publish to Stacc Registry
+      id: stacc-publish
+      uses: actions/stacc-publish@v1
+      with:
+        VERSION: 0.1.0 # version of your module
+        CLIENT_ID: abcdef # Stacc account client ID
+        CLIENT_SECRET: SECRET # Stacc account client secret
 ```
 
 The version of the pipe is pinned to the CLI version.
