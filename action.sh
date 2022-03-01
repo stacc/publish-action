@@ -4,7 +4,7 @@ set -e
 echo Using CLI version: $(stacc --version)
 
 # Log in
-stacc login -u $2 -p $3
+stacc login -u $INPUT_CLIENTID -p $INPUT_CLIENTSECRET
 
 # Publish artifacts
-stacc publish --version $1 $4
+stacc publish --version $INPUT_VERSION $INPUT_MODULEDIR

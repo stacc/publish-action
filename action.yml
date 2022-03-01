@@ -18,7 +18,7 @@ runs:
   using: docker
   image: Dockerfile
   args:
-    - ${{ inputs.version}}
-    - ${{ inputs.clientId}}
-    - ${{ inputs.clientSecret}}
-    - ${{ inputs.moduleDir}}
+    - ${{ inputs.version }}
+    - ${{ inputs.clientId }}
+    - ${{ inputs.clientSecret }}
+    - ${{ inputs.moduleDir }}
