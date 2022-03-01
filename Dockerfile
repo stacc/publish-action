@@ -1,20 +1,19 @@
-# before
-FROM stacc.azurecr.io/cli:0.5.26
-# after
+FROM alpine:3.15.0
 
-RUN apk update && apk add --no-cache bash nodejs npm yarn
+# For now, it's not the latest but w/e let's see if it works.
+ENV STACC_CLI_VERSION="v0.5.26"
+
+RUN apk update && apk add --no-cache bash nodejs npm yarn curl
+RUN curl -sSLf https://github.com/stacc/cli-next/releases/download/$STACC_CLI_VERSION/stacc_${STACC_CLI_VERSION:1}_Linux_x86_64.tar.gz -o stacc-cli.tar.gz \
+  && tar -xzf stacc-cli.tar.gz \
+  && chmod +x stacc \
+  && mv stacc /usr/local/bin/stacc
 
 RUN addgroup -S cli && adduser -S cli -G cli
 USER cli
 
 WORKDIR /home/cli
-
-RUN echo $INPUT_CLIENTID
-RUN echo $INPUT_CLIENTSECRET
-RUN echo $INPUT_MODULEDIR
-RUN echo $INPUT_VERSION
-
 COPY --chown=cli action.sh action.sh
 RUN chmod 744 action.sh
 
-ENTRYPOINT [ "/home/cli/action.sh" ]
+ENTRYPOINT [ "sh", "/home/cli/action.sh" ]

@@ -7,14 +7,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Login to ACR
-        uses: azure/docker-login@v1
-        with:
-          login-server: stacc.azurecr.io
-          username: ${{ secrets.CLIENT_ID }}
-          password: ${{ secrets.CLIENT_SECRET }}
-      - name: Docker login
-        run: docker login -u ${{ secrets.CLIENT_ID }} -p ${{ secrets.CLIENT_SECRET }} stacc.azurecr.io
       - name: Test publish
         uses: ./ # Uses an action in the root directory
         id: publish
