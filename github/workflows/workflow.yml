@@ -5,10 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     name: We test it locally with act
     steps:
-      - name: Get publish versio
+      - name: Test publish
         uses: ./ # Uses an action in the root directory
-        id: pokemon
+        working-directory: module
+        id: publish
         with:
-          pokemon_id: 150
-      - name: Get the pokemon
-        run: echo "${{ steps.pokemon.outputs.pokemon_name }} attack"
+          version: 0.1.0
