@@ -9,6 +9,11 @@ USER cli
 
 WORKDIR /home/cli
 
+RUN echo $INPUT_CLIENTID
+RUN echo $INPUT_CLIENTSECRET
+RUN echo $INPUT_MODULEDIR
+RUN echo $INPUT_VERSION
+
 COPY --chown=cli action.sh action.sh
 RUN chmod 744 action.sh
 
