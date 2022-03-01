@@ -7,7 +7,9 @@ jobs:
     steps:
       - name: Test publish
         uses: ./ # Uses an action in the root directory
-        working-directory: module
         id: publish
         with:
           version: 0.1.0
+          clientId: ${{ secrets.CLIENT_ID }}
+          clientSecret: ${{ secrets.CLIENT_SECRET }}
+          moduleDir: module

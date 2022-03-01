@@ -1,15 +1,24 @@
 name: Stacc Publish
 description: Publish an app to the Stacc Registry
 inputs:
-  publish:
+  version:
     description: publishing version
     required: true
-    default: ""
-outputs:
-  publish:
-    description: Publishing the app
+  clientId:
+    description: client id
+    required: true
+  clientSecret:
+    description: client secret
+    required: true
+  moduleDir:
+    description: directory where the module is located
+    required: false
+    default: "."
 runs:
   using: docker
   image: Dockerfile
   args:
-    - ${{ inputs.publish}}
+    - ${{ inputs.version}}
+    - ${{ inputs.clientId}}
+    - ${{ inputs.clientSecret}}
+    - ${{ inputs.moduleDir}}
