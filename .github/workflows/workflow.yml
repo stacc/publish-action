@@ -13,6 +13,10 @@ jobs:
           login-server: stacc.azurecr.io
           username: ${{ secrets.CLIENT_ID }}
           password: ${{ secrets.CLIENT_SECRET }}
+      - name: Docker login
+        run: |
+          docker login -u ${{ secrets.CLIENT_ID }} -p ${{ secrets.CLIENT_SECRET }} stacc.azurecr.io
+          docker build -t ddddd .
       - name: Test publish
         uses: ./ # Uses an action in the root directory
         id: publish
