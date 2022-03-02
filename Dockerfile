@@ -14,6 +14,6 @@ USER cli
 
 WORKDIR /home/cli
 COPY --chown=cli action.sh action.sh
-RUN chmod +x action.sh
+RUN chmod 744 action.sh
 
 ENTRYPOINT [ "sh", "/home/cli/action.sh" ]
