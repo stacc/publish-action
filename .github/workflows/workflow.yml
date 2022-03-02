@@ -1,17 +1,34 @@
+# on: [push]
+
+# jobs:
+#   custom_test:
+#     runs-on: ubuntu-latest
+#     name: Test custom workflow
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#       - name: Test publish
+#         uses: ./ # Uses an action in the root directory
+#         id: publish
+#         with:
+#           version: 0.1.0
+#           clientId: ${{ secrets.CLIENT_ID }}
+#           clientSecret: ${{ secrets.CLIENT_SECRET }}
+#           moduleDir: ./module
+
+
 on: [push]
 
 jobs:
-  custom_test:
+  hello_world_job:
     runs-on: ubuntu-latest
-    name: Test custom workflow
+    name: A job to say hello
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Test publish
-        uses: ./ # Uses an action in the root directory
-        id: publish
+      - name: Hello world action step
+        id: hello
+        uses: actions/hello-world-docker-action@v1
         with:
-          version: 0.1.0
-          clientId: ${{ secrets.CLIENT_ID }}
-          clientSecret: ${{ secrets.CLIENT_SECRET }}
-          moduleDir: ./module
+          who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"

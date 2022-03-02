@@ -1,24 +1,41 @@
-name: Stacc Publish
-description: Publish an app to the Stacc Registry
+# name: 'Stacc Publish'
+# description: Publish an app to the Stacc Registry
+# inputs:
+#   version:
+#     description: publishing version
+#     required: true
+#   clientId:
+#     description: client id
+#     required: true
+#   clientSecret:
+#     description: client secret
+#     required: true
+#   moduleDir:
+#     description: directory where the module is located
+#     required: false
+#     default: "."
+# runs:
+#   using: docker
+#   image: Dockerfile
+#   args:
+#     - ${{ inputs.version }}
+#     - ${{ inputs.clientId }}
+#     - ${{ inputs.clientSecret }}
+#     - ${{ inputs.moduleDir }}
+
+# action.yml
+name: 'Hello World'
+description: 'Greet someone and record the time'
 inputs:
-  version:
-    description: publishing version
+  who-to-greet:  # id of input
+    description: 'Who to greet'
     required: true
-  clientId:
-    description: client id
-    required: true
-  clientSecret:
-    description: client secret
-    required: true
-  moduleDir:
-    description: directory where the module is located
-    required: false
-    default: "."
+    default: 'World'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
 runs:
-  using: docker
-  image: Dockerfile
+  using: 'docker'
+  image: 'Dockerfile'
   args:
-    - ${{ inputs.version }}
-    - ${{ inputs.clientId }}
-    - ${{ inputs.clientSecret }}
-    - ${{ inputs.moduleDir }}
+    - ${{ inputs.who-to-greet }}
