@@ -13,6 +13,8 @@ RUN addgroup -S cli && adduser -S cli -G cli
 USER cli
 
 WORKDIR /home/cli
+ENV MODULEDIR $INPUT_MODULEDIR
+COPY $MODULEDIR .
 COPY --chown=cli action.sh action.sh
 RUN chmod 744 action.sh
 
