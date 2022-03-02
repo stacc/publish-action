@@ -1,4 +1,4 @@
-FROM alpine:3.16.0
+FROM alpine:3.15.0
 
 # For now, it's not the latest but w/e let's see if it works.
 ENV STACC_CLI_VERSION="v0.5.26"
