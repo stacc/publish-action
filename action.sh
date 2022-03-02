@@ -5,8 +5,7 @@ echo Using CLI version: $(stacc --version)
 
 export STACC_CONFIG=$PWD/.staccrc
 # Log in
-touch $STACC_CONFIG
-
+echo "does this work?" > $STACC_CONFIG
 whoami
 echo "------------------"
 stat $STACC_CONFIG
