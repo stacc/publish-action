@@ -12,7 +12,6 @@ jobs:
         id: publish
         with:
           version: 0.1.0
-          clientId: '${{ secrets.CLIENT_ID }}'
-          clientSecret: '${{ secrets.CLIENT_SECRET }}'
+          clientId: ${{ secrets.CLIENT_ID }}
+          clientSecret: ${{ secrets.CLIENT_SECRET }}
           moduleDir: ./module
-
