@@ -7,6 +7,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Decode base64 secrets
+        run: echo $SECRETS_FILE_CONTENTS|base64 -d > lib/path/to/secrets.dart
       - name: Test publish
         uses: ./ # Uses an action in the root directory
         id: publish
