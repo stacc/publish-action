@@ -13,7 +13,7 @@ RUN addgroup -S cli && adduser -S cli -G cli
 USER cli
 
 WORKDIR /home/cli
-COPY --chown=cli action.sh /action.sh
+COPY --chown=cli action.sh action.sh
 RUN chmod +x action.sh
 
 ENTRYPOINT [ "sh", "/home/cli/action.sh" ]
