@@ -10,9 +10,8 @@ RUN curl -sSLf https://github.com/stacc/cli-next/releases/download/$STACC_CLI_VE
   && mv stacc /usr/local/bin/stacc
 
 WORKDIR /home/cli
-ENV MODULEDIR $INPUT_MODULEDIR
-COPY $MODULEDIR .
+
+COPY $INPUT_MODULEDIR .
 COPY action.sh action.sh
-RUN chmod 744 action.sh
 
 ENTRYPOINT [ "sh", "/home/cli/action.sh" ]
