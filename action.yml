@@ -1,4 +1,5 @@
 name: 'Stacc Publish'
+author: 'Stacc'
 description: Publish an app to the Stacc Registry
 inputs:
   version:
