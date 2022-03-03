@@ -11,6 +11,7 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: publish
         with:
+          version: 0.1.0
           clientId: ${{ secrets.CLIENT_ID }}
           clientSecret: ${{ secrets.CLIENT_SECRET }}
           moduleDir: ./module
