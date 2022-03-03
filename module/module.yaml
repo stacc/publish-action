@@ -1,6 +1,6 @@
 name: test-gitworkflow
 org: stacc
-version: 0.1.0
+version: 0.1.1
 type: module
 title: test-gitworkflow
 description: Testing
