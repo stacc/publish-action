@@ -1,3 +1,4 @@
+name: stacc publish
 on: [push]
 
 jobs:
