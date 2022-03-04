@@ -1,6 +1,11 @@
 name: 'Stacc Publish'
 author: 'Stacc'
 description: Publish an app to the Stacc Registry
+
+branding:
+  icon: package
+  color: red
+
 inputs:
   version:
     description: publishing version
