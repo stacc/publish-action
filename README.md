@@ -1,20 +1,19 @@
-# Stacc Publish - Pipe for GitHub
+# Stacc Publish - Action for GitHub
 
 > This repository is a work in progress
 
-A GitHub Pipe for publishing modules or projects to the Stacc registry.
+A GitHub Action for publishing modules and projects to the Stacc Registry.
 
 ## Usage
 
-In order to publish your module or project to the Stacc registry, add the following step to your GitHub Pipeline.
+In order to publish your module or project to the Stacc Registry, add the following step to your GitHub workflow.
 
 ```yaml
 - steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: stacc publish
+    - name: Publish to Stacc Registry
       uses: stacc/publish-action@v1
-      id: publish
       with:
         version: 0.1.0 # version of your module, defaults to ""
         clientId: abcdef # Stacc account client ID
