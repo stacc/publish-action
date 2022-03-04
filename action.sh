@@ -1,4 +1,5 @@
-#!usr/bin/bash bash
+#!/bin/bash
+
 set -e
 
 echo Using CLI version: $(stacc --version)
