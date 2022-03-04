@@ -18,8 +18,8 @@ inputs:
 runs:
   using: docker
   image: Dockerfile
-  args:
-    - ${{ inputs.version }}
-    - ${{ inputs.clientId }}
-    - ${{ inputs.clientSecret }}
-    - ${{ inputs.moduleDir }}
+  env:
+    STACC_CLIENT_ID: ${{ inputs.clientId }}
+    STACC_CLIENT_SECRET: ${{ inputs.clientSecret }}
+    VERSION: ${{ inputs.version }}
+    MODULE_DIR: ${{ inputs.moduleDir }}
