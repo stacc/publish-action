@@ -16,8 +16,8 @@ In order to publish your module or project to the Stacc Registry, add the follow
       uses: stacc/publish-action@v1
       with:
         version: 0.1.0 # version of your module, defaults to ""
-        clientId: abcdef # Stacc account client ID
-        clientSecret: SECRET # Stacc account client secret
+        clientId: ${{ secrets.STACC_CLIENT_ID }} # Stacc account client ID
+        clientSecret: ${{ secrets.STACC_CLIENT_SECRET }} # Stacc account client secret
         moduleDir: ./module # Stacc module, defaults to .
 ```
 
