@@ -21,4 +21,4 @@ In order to publish your module or project to the Stacc Registry, add the follow
         moduleDir: ./module # Stacc module, defaults to .
 ```
 
-The version of the pipe is pinned to the CLI version.
+The version of the action is pinned to the CLI version.
