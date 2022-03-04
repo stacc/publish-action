@@ -9,15 +9,17 @@ A GitHub Pipe for publishing modules or projects to the Stacc registry.
 In order to publish your module or project to the Stacc registry, add the following step to your GitHub Pipeline.
 
 ```yaml
-- step:
-    - name: Publish to Stacc Registry
-      id: stacc-publish
+- steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: stacc publish
       uses: stacc/publish-action@v1
+      id: publish
       with:
-        VERSION: 0.1.0 # version of your module
-        CLIENT_ID: abcdef # Stacc account client ID
-        CLIENT_SECRET: SECRET # Stacc account client secret
-        MODULE_DIR: ./module
+        version: 0.1.0 # version of your module, defaults to ""
+        clientId: abcdef # Stacc account client ID
+        clientSecret: SECRET # Stacc account client secret
+        moduleDir: ./module # Stacc module, defaults to .
 ```
 
 The version of the pipe is pinned to the CLI version.
