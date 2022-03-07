@@ -1,5 +1,6 @@
-FROM staccas/cli:0.6.12
+FROM staccas/cli:0.6.13
 
-COPY action.sh action.sh
+WORKDIR /home/cli
+COPY --chown=stacc action.sh action.sh
 
-ENTRYPOINT [ "sh", "action.sh" ]
+ENTRYPOINT ["/home/cli/action.sh"]
