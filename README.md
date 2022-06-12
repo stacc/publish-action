@@ -1,5 +1,7 @@
 # Stacc Publish - Action for GitHub
 
+**DEPRECATED: Use https://github.com/stacc/setup-stacc-cli instead **
+
 > This repository is a work in progress
 
 A GitHub Action for publishing modules and projects to the Stacc Registry.
